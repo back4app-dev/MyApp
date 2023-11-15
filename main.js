@@ -31,3 +31,8 @@ Parse.Cloud.beforeSave(Parse.User, async (request) => {
     }
   }
 });
+
+Parse.Cloud.beforeDelete(Parse.User, async (request) => {
+  const user = request.object;
+  console.log("Deleting user: " + user.id);
+});
